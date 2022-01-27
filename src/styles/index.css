@@ -1,6 +1,11 @@
+:root {
+  --color-topaz: #12beab;
+}
+
 body {
   margin: 0;
   background: url("../../public/assets/images/backgroundSite.jpg") center;
   height: 100vh;
   width: 100vw;
+  font-family: "Poppins", sans-serif;
 }
