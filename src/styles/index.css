@@ -1,11 +1,9 @@
-:root {
-  --color-topaz: #12beab;
-}
+@import "variables.css";
 
 body {
   margin: 0;
-  background: url("../../public/assets/images/backgroundSite.jpg") center;
+  background: var(--main-bg-url) center;
   height: 100vh;
   width: 100vw;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-family-primary);
 }
