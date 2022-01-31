@@ -1,3 +1,4 @@
+import { showHidePassword } from '../../../../utils/showHidePassword';
 import { SubmitButton } from '../../../SubmitButton/SubmitButton';
 import { CheckboxField } from '../CheckboxField/CheckboxField';
 import { CheckboxGroup } from '../CheckboxGroup/CheckboxGroup';
@@ -7,7 +8,7 @@ export const DefaultInputsForm = (props) => {
   return (
     <>
       <InputTextField
-        id="email"
+        id="email-input"
         label="E-MAIL"
         name="email"
         type="email-input"
@@ -17,7 +18,7 @@ export const DefaultInputsForm = (props) => {
         required
       />
       <InputTextField
-        id="password"
+        id="password-input"
         label="HASŁO"
         name="password-input"
         className="password-input"
@@ -28,7 +29,7 @@ export const DefaultInputsForm = (props) => {
         onChange={props.handleChange}
         required
       >
-        <button className="eye-icon"></button>
+        <button className="eye-icon" onClick={showHidePassword}></button>
       </InputTextField>
       <CheckboxGroup>
         <CheckboxField
