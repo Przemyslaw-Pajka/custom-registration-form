@@ -1,9 +1,19 @@
 @import "variables.css";
+@import "global.css";
 
+.root {
+  height: 100%;
+  display: flex;
+}
+a {
+  text-decoration: none;
+}
 body {
   margin: 0;
-  background: var(--main-bg-url) center;
   height: 100vh;
+  background: var(--main-bg-url) center no-repeat;
+  background-size: cover;
   width: 100vw;
   font-family: var(--font-family-primary);
+  color: var(--font-color-primary);
 }

@@ -1,8 +1,7 @@
-
-import { css } from 'styled-components';
+import { css } from 'styled-components'
 
 export const PrimaryButtonStyle = css`
-    background: var(--color-topaz);
+    background: var(--alt-color);
     border: none;
     color: #fff;
     text-decoration: none;

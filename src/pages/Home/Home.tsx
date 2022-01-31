@@ -1,11 +1,15 @@
-import React from 'react';
-// import { AppStyled } from './styles/App.styled';
+import { Modal } from '../../components/Modal/Modal';
+import { RegistrationForm } from '../../components/RegistrationForm/Container/RegistrationForm';
+import { HomeHeading, HomeStyled } from './styles/Home.styled';
 
 export const Home = () => {
   return (
-    <>
-        app
-    </>
+    <Modal>
+      <HomeStyled>
+       <HomeHeading>Rejestracja</HomeHeading>
+       <RegistrationForm/>
+       </HomeStyled>
+    </Modal>
   )
 }
 

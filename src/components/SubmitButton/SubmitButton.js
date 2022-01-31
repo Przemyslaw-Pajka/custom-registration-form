@@ -1,7 +1,7 @@
 import { SubmitButtonStyled } from "./styles/SubmitButton.styled"
 
-export const SubmitButton: React.FC = (props) => (
-    <SubmitButtonStyled>
+export const SubmitButton = (props) => (
+    <SubmitButtonStyled className={props.className}>
         {props.children}
     </SubmitButtonStyled>
 )

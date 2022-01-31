@@ -1,0 +1,9 @@
+.text-alt-color {
+  color: var(--alt-color);
+}
+.text-gray {
+  color: var(--font-color-gray);
+}
+.text-medium-bold {
+  font-weight: 500;
+}
