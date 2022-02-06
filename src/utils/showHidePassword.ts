@@ -1,10 +1,6 @@
 export const showHidePassword = (e:Event) => {
     e.preventDefault()
-    const phoneInput = document.getElementById('password-input') as HTMLFormElement;
-
-    if (phoneInput.type === "password") {
-        phoneInput.type = "text";
-    } else {
-        phoneInput.type = "password";
-    }
+    const passwordInput = document.getElementById('password-input') as HTMLFormElement;
+    
+    passwordInput.type = (passwordInput.type === 'password')? 'text' : 'password';
 }
