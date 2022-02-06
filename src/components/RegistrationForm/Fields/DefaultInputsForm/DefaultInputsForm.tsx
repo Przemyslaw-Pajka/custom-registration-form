@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FormValues } from '../../../../types/types';
 import { showHidePassword } from '../../../../utils/showHidePassword';
 import { SubmitButton } from '../../../SubmitButton/SubmitButton';
@@ -6,7 +6,34 @@ import { CheckboxField } from '../CheckboxField/CheckboxField';
 import { CheckboxGroup } from '../CheckboxGroup/CheckboxGroup';
 import { InputTextField } from '../InputTextField/InputTextField';
 
-export const DefaultInputsForm:React.FC<{values:FormValues}> = (props) => {
+export const DefaultInputsForm:React.FC<{values:FormValues}> = React.memo((props) => {
+  useEffect(()=>{
+    console.log("rerendering")
+  })
+  const handleChange = () => {
+    const passwordInput = document.getElementById('password-input') as HTMLInputElement;
+   
+    const oneDigitInput = document.getElementById('oneDigit-input') as HTMLInputElement;
+    const regExpOneDigit = /.*[0-9].*/;
+    const isAtLeastOneDigit = regExpOneDigit.test(passwordInput.value)
+    const previousValueOfOneDigit = oneDigitInput.checked;
+    console.log(previousValueOfOneDigit)
+    console.log(isAtLeastOneDigit)
+    if(previousValueOfOneDigit !== isAtLeastOneDigit) {
+      oneDigitInput.checked = isAtLeastOneDigit
+      console.log("ZMIANA")
+    }
+
+    const eightCharInput = document.getElementById('eightChar-input') as HTMLInputElement;
+    const regExpEightChar = /^[a-zA-Z0-9]{8,}$/
+    const isAtLeastEightChar = regExpEightChar.test(passwordInput.value)
+    eightCharInput.checked = isAtLeastEightChar
+   
+    const uppLowLetterInput = document.getElementById('uppLowLetter-input') as HTMLInputElement;
+    const regExpUppLowLetter = /([A-Z].*[a-z]|[a-z].*[A-Z])/;
+    const isAtLeastUppLowLetterChar = regExpUppLowLetter.test(passwordInput.value)
+    uppLowLetterInput.checked = isAtLeastUppLowLetterChar
+  }
   return (
     <>
       <InputTextField
@@ -27,6 +54,7 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = (props) => {
         type="password"
         as="input"
         value={props.values.password}
+        onKeyUp={handleChange}
         placeholder="Wpisz hasło"
         required
       >
@@ -37,7 +65,9 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = (props) => {
           id="oneDigit-input"
           name="oneDigit"
           type="checkbox"
+          disabled
           as="input"
+          required
         >
           <label>1 cyfra</label>
         </CheckboxField>
@@ -45,7 +75,9 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = (props) => {
           id="uppLowLetter-input"
           name="uppLowLetter"
           type="checkbox"
+          disabled
           as="input"
+          required
         >
           <label>Wielka i mała litera</label>
         </CheckboxField>
@@ -53,7 +85,9 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = (props) => {
           id="eightChar-input"
           name="8 znaków"
           type="checkbox"
+          disabled
           as="input"
+          required
         ><label>8 znaków</label></CheckboxField>
       </CheckboxGroup>
       <InputTextField
@@ -101,4 +135,4 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = (props) => {
       <a href="/" className='log-in text-alt-color text-medium-bold'>Logowanie</a>
     </>
   )
-}
+})
