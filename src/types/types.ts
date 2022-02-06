@@ -8,6 +8,7 @@ export type InputProps = {
 export interface FormValues {
     email: string,
     password: string,
-    payerNumber: number | null,
-    pesel: number | null
+    payerNumber: number | '',
+    pesel: number | '',
+    phone?: number | ''
 }

@@ -78,7 +78,6 @@ label {
         &::after {
           left: 6px;
           top: 2px;
-          
         }
       }
      label {

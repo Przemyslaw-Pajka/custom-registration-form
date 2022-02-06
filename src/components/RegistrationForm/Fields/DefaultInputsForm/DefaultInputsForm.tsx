@@ -1,25 +1,12 @@
 import React from 'react';
+import { FormValues } from '../../../../types/types';
 import { showHidePassword } from '../../../../utils/showHidePassword';
 import { SubmitButton } from '../../../SubmitButton/SubmitButton';
 import { CheckboxField } from '../CheckboxField/CheckboxField';
 import { CheckboxGroup } from '../CheckboxGroup/CheckboxGroup';
 import { InputTextField } from '../InputTextField/InputTextField';
 
-// interface FormValues {
-//   email: string,
-//   password: string,
-//   handleChange: any, //
-//   oneDigit: boolean,
-//   uppLowLetter: boolean,
-//   eightChar: boolean,
-//   payerNumber: number,
-//   pesel: number,
-//   phone: number,
-//   values: any
-// }
-
-
-export const DefaultInputsForm:React.FC<{values:any}> = (props) => {
+export const DefaultInputsForm:React.FC<{values:FormValues}> = (props) => {
   return (
     <>
       <InputTextField
@@ -35,16 +22,15 @@ export const DefaultInputsForm:React.FC<{values:any}> = (props) => {
       <InputTextField
         id="password-input"
         label="HASŁO"
-        name="password-input"
+        name="password"
         className="password-input"
         type="password"
         as="input"
         value={props.values.password}
         placeholder="Wpisz hasło"
-        onChange={props.values.handleChange}
         required
       >
-        <button className="eye-icon" onClick={()=>showHidePassword}></button>
+      <button className="eye-icon" onClick={showHidePassword}></button>
       </InputTextField>
       <CheckboxGroup>
         <CheckboxField
@@ -52,7 +38,6 @@ export const DefaultInputsForm:React.FC<{values:any}> = (props) => {
           name="oneDigit"
           type="checkbox"
           as="input"
-          value={props.values.oneDigit}
         >
           <label>1 cyfra</label>
         </CheckboxField>
@@ -61,7 +46,6 @@ export const DefaultInputsForm:React.FC<{values:any}> = (props) => {
           name="uppLowLetter"
           type="checkbox"
           as="input"
-          value={props.values.uppLowLetter}
         >
           <label>Wielka i mała litera</label>
         </CheckboxField>
@@ -70,7 +54,6 @@ export const DefaultInputsForm:React.FC<{values:any}> = (props) => {
           name="8 znaków"
           type="checkbox"
           as="input"
-          value={props.values.eightChar}
         ><label>8 znaków</label></CheckboxField>
       </CheckboxGroup>
       <InputTextField

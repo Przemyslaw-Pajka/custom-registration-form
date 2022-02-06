@@ -2,8 +2,9 @@ import { Formik } from "formik";
 import { FormValues } from '../../../types/types';
 import { DefaultInputsForm } from "../Fields/DefaultInputsForm/DefaultInputsForm";
 import { RegistrationFormStyled } from "./styles/RegistrationForm.styled.js";
+
 interface PropsValues{
-  values?: FormValues,
+  values: FormValues,
   handleReset?: () => {},
   handleSubmit?: () => {},
   handleChange?: () => {}
@@ -13,14 +14,15 @@ export const RegistrationForm:React.FC = () => {
   const initialValues:FormValues = {
     email:'',
     password: '',
-    payerNumber: null,
-    pesel: null
+    payerNumber: '',
+    pesel: '',
+    phone: '',
   }
   return (
     <Formik
     initialValues={initialValues}
       onSubmit={(values) => {
-        console.log(values)
+        console.log("SUBMITTED",values)
       }}>
       {(props:PropsValues) => (
         <RegistrationFormStyled
