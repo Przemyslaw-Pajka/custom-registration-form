@@ -1,8 +1,8 @@
 import { Field, useField } from "formik";
+import { InputProps } from "../../../../types/types";
 import { InputTextFieldStyled, Label } from "./styles/InputTextField.styled";
 
-export const InputTextField
-  = ({ label, optional, children, ...props }) => {
+export const InputTextField: React.FC<InputProps> = ({ label, optional, children,...props}) => {
     const [field, meta] = useField(props);
 
     return (

@@ -1,7 +1,8 @@
 import { Field, useField } from "formik";
+import { InputProps } from "../../../../types/types";
 import { CheckboxFieldStyled } from "./styles/CheckboxField.styled";
 
-export const CheckboxField = ({ label, children, ...props }) => {
+export const CheckboxField:React.FC<InputProps> = ({ label, children, ...props }) => {
     const [field] = useField(props);
 
     return (

@@ -1,10 +1,25 @@
+import React from 'react';
 import { showHidePassword } from '../../../../utils/showHidePassword';
 import { SubmitButton } from '../../../SubmitButton/SubmitButton';
 import { CheckboxField } from '../CheckboxField/CheckboxField';
 import { CheckboxGroup } from '../CheckboxGroup/CheckboxGroup';
 import { InputTextField } from '../InputTextField/InputTextField';
 
-export const DefaultInputsForm = (props) => {
+// interface FormValues {
+//   email: string,
+//   password: string,
+//   handleChange: any, //
+//   oneDigit: boolean,
+//   uppLowLetter: boolean,
+//   eightChar: boolean,
+//   payerNumber: number,
+//   pesel: number,
+//   phone: number,
+//   values: any
+// }
+
+
+export const DefaultInputsForm:React.FC<{values:any}> = (props) => {
   return (
     <>
       <InputTextField
@@ -13,7 +28,7 @@ export const DefaultInputsForm = (props) => {
         name="email"
         type="email-input"
         as="input"
-        value={props.email}
+        value={props.values.email}
         placeholder="Wpisz adres e-mail"
         required
       />
@@ -24,12 +39,12 @@ export const DefaultInputsForm = (props) => {
         className="password-input"
         type="password"
         as="input"
-        value={props.password}
+        value={props.values.password}
         placeholder="Wpisz hasło"
-        onChange={props.handleChange}
+        onChange={props.values.handleChange}
         required
       >
-        <button className="eye-icon" onClick={showHidePassword}></button>
+        <button className="eye-icon" onClick={()=>showHidePassword}></button>
       </InputTextField>
       <CheckboxGroup>
         <CheckboxField
@@ -37,7 +52,7 @@ export const DefaultInputsForm = (props) => {
           name="oneDigit"
           type="checkbox"
           as="input"
-          value={props.oneDigit}
+          value={props.values.oneDigit}
         >
           <label>1 cyfra</label>
         </CheckboxField>
@@ -46,7 +61,7 @@ export const DefaultInputsForm = (props) => {
           name="uppLowLetter"
           type="checkbox"
           as="input"
-          value={props.uppLowLetter}
+          value={props.values.uppLowLetter}
         >
           <label>Wielka i mała litera</label>
         </CheckboxField>
@@ -55,7 +70,7 @@ export const DefaultInputsForm = (props) => {
           name="8 znaków"
           type="checkbox"
           as="input"
-          value={props.eightChar}
+          value={props.values.eightChar}
         ><label>8 znaków</label></CheckboxField>
       </CheckboxGroup>
       <InputTextField
@@ -64,7 +79,7 @@ export const DefaultInputsForm = (props) => {
         name="payerNumber"
         type="number"
         as="input"
-        value={props.payerNumber}
+        value={props.values.payerNumber}
         placeholder="Wpisz numer płatnika"
         required
       />
@@ -74,7 +89,7 @@ export const DefaultInputsForm = (props) => {
         name="pesel"
         type="number"
         as="input"
-        value={props.pesel}
+        value={props.values.pesel}
         placeholder="Wpisz PESEL"
         required
       />
@@ -85,7 +100,7 @@ export const DefaultInputsForm = (props) => {
         name="phone"
         type="tel"
         as="input"
-        value={props.phone}
+        value={props.values.phone}
         placeholder="Wpisz numer telefonu"
       />
       <CheckboxField
