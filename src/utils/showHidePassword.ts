@@ -1,4 +1,4 @@
-export const showHidePassword = (e:Event) => {
+export const showHidePassword = (e:React.MouseEvent) => {
     e.preventDefault()
     const passwordInput = document.getElementById('password-input') as HTMLFormElement;
     
