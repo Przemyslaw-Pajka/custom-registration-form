@@ -1,4 +1,5 @@
 import { Field, useField } from "formik";
+import React from "react";
 import { InputProps } from "../../../../types/types";
 import { CheckboxFieldStyled } from "./styles/CheckboxField.styled";
 
@@ -9,7 +10,7 @@ export const CheckboxField:React.FC<InputProps> = ({ label, children, ...props }
         <CheckboxFieldStyled className={props.className}>
             <Field
                 {...props}
-                {...field}
+                {...field}      
             />
             <span className="checkmark"></span>
             {children}

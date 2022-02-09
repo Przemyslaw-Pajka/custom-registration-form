@@ -5,10 +5,18 @@ export type InputProps = {
     optional?: string | null,
   } & FieldAttributes<{}>
 
-export interface FormValues {
+  interface IObjectKeys {
+    [key: string]: string | number | boolean | undefined;
+  }
+  
+export interface FormValues extends IObjectKeys{
     email: string,
     password: string,
     payerNumber: number | '',
     pesel: number | '',
-    phone?: number | ''
+    phone?: number | '',
+    isOneDigit: boolean,
+    isAmountChar: boolean,
+    isUppLowLetter: boolean,
 }
+

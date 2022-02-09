@@ -1,4 +1,5 @@
 import { Formik } from "formik";
+import React from "react";
 import { FormValues } from '../../../types/types';
 import { DefaultInputsForm } from "../Fields/DefaultInputsForm/DefaultInputsForm";
 import { RegistrationFormStyled } from "./styles/RegistrationForm.styled.js";
@@ -10,13 +11,16 @@ interface PropsValues{
   handleChange?: () => {}
 }
 
-export const RegistrationForm:React.FC = () => {
+export const RegistrationForm:React.FC = React.memo(() => {
   const initialValues:FormValues = {
     email:'',
     password: '',
     payerNumber: '',
     pesel: '',
     phone: '',
+    isOneDigit: false,
+    isAmountChar: false,
+    isUppLowLetter: false,
   }
   return (
     <Formik
@@ -34,4 +38,4 @@ export const RegistrationForm:React.FC = () => {
       )}
     </Formik>
   );
-}
+})
