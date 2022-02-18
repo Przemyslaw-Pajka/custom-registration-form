@@ -22,6 +22,18 @@ export const InputTextFieldStyled = styled.div`
     padding-top: 16px;
   }
   input {
+    margin: 0;
+    background: #f9f9f9;
+    border: 1px solid #d3cfcf;
+    color: #000;
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    max-height: 50px;
+    font-family: var(--font-family-primary);
+
     &::placeholder {
       color: #c1c1c1;
     }
