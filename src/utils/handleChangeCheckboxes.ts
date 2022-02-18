@@ -1,13 +1,9 @@
- import { FormValues } from "../types/types"
+import { FormValues } from "../types/types"
+import { regExp } from "../validation/CONSTANTS"
 
  export const handleChangeCheckboxes = (values:FormValues) => {
     const passwordInput = document.getElementById('passwordInput') as HTMLInputElement
     const checkboxNames = ['oneDigit','amountChar','uppLowLetter']
-    const regExp:{[key:string]: RegExp} = {
-      oneDigit: new RegExp(/.*[0-9].*/),
-      amountChar: new RegExp(/^[a-zA-Z0-9]{8,}$/),
-      uppLowLetter: new RegExp(/([A-Z].*[a-z]|[a-z].*[A-Z])/)
-    }
     
     checkboxNames.forEach((item:string)=>{
       const checkBoxName = `${item}Input`

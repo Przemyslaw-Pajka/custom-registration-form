@@ -5,6 +5,10 @@ export const InputTextFieldStyled = styled.div`
   flex-direction: column;
   position: relative;
 
+  .error {
+    color: #ff0000;
+    text-align: left;
+  }
   &:not(:first-of-type) {
     padding-top: 16px;
   }
@@ -19,7 +23,7 @@ export const InputTextFieldStyled = styled.div`
   .password-input::after {
     content: '';
     display: block;
-    background: red;
+    background: #ff0000;
     z-index: 100;
     width: 10px;
     height: 10px;

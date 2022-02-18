@@ -2,6 +2,7 @@ import React from 'react';
 import { FormValues } from '../../../../types/types';
 import { handleChangeCheckboxes } from '../../../../utils/handleChangeCheckboxes';
 import { showHidePassword } from '../../../../utils/showHidePassword';
+import { validatePesel } from '../../../../validation/validatePesel';
 import { SubmitButton } from '../../../SubmitButton/SubmitButton';
 import { CheckboxField } from '../CheckboxField/CheckboxField';
 import { CheckboxGroup } from '../CheckboxGroup/CheckboxGroup';
@@ -78,6 +79,7 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = React.memo((props
         label="NUMER PESEL"
         name="pesel"
         type="number"
+        validate={validatePesel}
         as="input"
         value={props.values.pesel}
         placeholder="Wpisz PESEL"
