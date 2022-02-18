@@ -33,6 +33,7 @@ export const InputTextFieldStyled = styled.div`
     letter-spacing: 1.2px;
     max-height: 50px;
     font-family: var(--font-family-primary);
+    -moz-appearance: textfield;
 
     &::placeholder {
       color: #c1c1c1;
