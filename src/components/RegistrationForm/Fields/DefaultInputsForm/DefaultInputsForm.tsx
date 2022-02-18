@@ -2,6 +2,7 @@ import React from 'react';
 import { FormValues } from '../../../../types/types';
 import { handleChangeCheckboxes } from '../../../../utils/handleChangeCheckboxes';
 import { showHidePassword } from '../../../../utils/showHidePassword';
+import { MIN_PASSWORD_LENGTH } from '../../../../validation/CONSTANTS';
 import { validatePesel } from '../../../../validation/validatePesel';
 import { SubmitButton } from '../../../SubmitButton/SubmitButton';
 import { CheckboxField } from '../CheckboxField/CheckboxField';
@@ -62,7 +63,7 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = React.memo((props
           disabled
           as="input"
           required
-        ><label>8 znaków</label></CheckboxField>
+        ><label>{MIN_PASSWORD_LENGTH} znaków</label></CheckboxField>
       </CheckboxGroup>
       <InputTextField
         id="payerNumberInput"
