@@ -3,9 +3,17 @@ import styled from 'styled-components'
 export const HomeStyled = styled.div`
    text-align: center;
    max-width:722px;
-   max-height: 809px;
    box-sizing: border-box;
-   padding: 54px 72px 145px;
+   padding: 58px 72px 58px;
+   
+   @media (max-width:450px) {
+      height: 100vh;
+      padding: 58px 15px 58px;
+      padding-top: 0;
+      .submit-registration-btn,.log-in {
+         margin-top: 10px;
+      }
+   }
 `
 export const HomeHeading = styled.h1`
    font-weight: 400;

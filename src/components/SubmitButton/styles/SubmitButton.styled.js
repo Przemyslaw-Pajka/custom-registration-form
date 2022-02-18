@@ -13,5 +13,6 @@ export const SubmitButtonStyled = styled.button`
         padding: 16px 70.5px;
         font-weight: 700;
         font-size: 16px;;
+        box-shadow: 0px 2px 6px #b7b7b7;
     }
 `

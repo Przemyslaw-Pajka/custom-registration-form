@@ -64,17 +64,22 @@ label {
   padding-left: 34px;
   margin-top: 15px;
   line-height: 1.6;
-  [name=acceptTerms-input]{
+  [name=acceptTermsInput],.checkmark{
     width: 21px;
     height: 21px;
     transform: none;
+    margin: 0;
+  }
+  [name=acceptTermsInput]{
+    width: 21px;
+    height: 21px;
+    transform: none;
+    margin: 0;
   }
       .checkmark {
         background: #f7f7f7;
         top: 0px;
         transform: none;
-        width: 21px;
-        height: 21px;
         &::after {
           left: 6px;
           top: 2px;

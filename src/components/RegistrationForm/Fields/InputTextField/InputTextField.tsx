@@ -4,9 +4,9 @@ import { InputTextFieldStyled, Label } from "./styles/InputTextField.styled";
 
 export const InputTextField: React.FC<InputProps> = ({ label, optional, children,...props}) => {
     const [field, meta] = useField(props);
-
+    
     return (
-      <InputTextFieldStyled>
+      <InputTextFieldStyled className={( props.value && !meta.error)? 'valid' : ''}>
         <Label
           htmlFor={props.id || props.name}>
           {label}

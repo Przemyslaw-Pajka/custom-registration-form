@@ -5,6 +5,15 @@ export const InputTextFieldStyled = styled.div`
   flex-direction: column;
   position: relative;
 
+    &.valid {
+      input {
+        background-color: lightgreen;
+      }
+      .eye-icon {
+        filter: invert(33%) sepia(8%) saturate(394%) hue-rotate(130deg) brightness(95%) contrast(92%);
+      }
+    }
+  
   .error {
     color: #ff0000;
     text-align: left;
@@ -12,15 +21,16 @@ export const InputTextFieldStyled = styled.div`
   &:not(:first-of-type) {
     padding-top: 16px;
   }
-  input::placeholder {
-    color: #c1c1c1;
-  }
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  input {
+    &::placeholder {
+      color: #c1c1c1;
+    }
+    &::-webkit-outer-spin-button,&::-webkit-inner-spin-button {
+      -webkit-appearance: none;
     margin: 0;
+    }
   }
-  .password-input::after {
+  .passwordInput::after {
     content: '';
     display: block;
     background: #ff0000;
@@ -40,7 +50,7 @@ export const InputTextFieldStyled = styled.div`
     width: 21px;
     height: 21px;
     position: absolute;
-    bottom: 13px;
+    top: 55px;
     right: 17px;
     background-repeat: no-repeat;
     border: none;
