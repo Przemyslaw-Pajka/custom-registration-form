@@ -45,15 +45,13 @@ input:checked ~ .checkmark:after {
   content: "";
   display: none;
   position: absolute;
-  left: 5px;
-  top: 0%;
   width: 5px;
   height: 10px;
   border: solid #07df07;
   border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 label {
   text-align: left;
@@ -80,10 +78,6 @@ label {
         background: #f7f7f7;
         top: 0px;
         transform: none;
-        &::after {
-          left: 6px;
-          top: 2px;
-        }
       }
      label {
        font-size: 13.5px;
