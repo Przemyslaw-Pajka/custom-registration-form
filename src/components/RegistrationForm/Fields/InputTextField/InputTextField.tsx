@@ -2,7 +2,8 @@ import { Field, useField } from "formik";
 import { InputProps } from "../../../../types/types";
 import { InputTextFieldStyled, Label } from "./styles/InputTextField.styled";
 
-export const InputTextField: React.FC<InputProps> = ({ label, optional, children,...props}) => {
+
+export const InputTextField: React.FC<InputProps> = ({ label, optional, errors, children,...props}) => {
     const [field, meta] = useField(props);
     
     return (
@@ -17,8 +18,8 @@ export const InputTextField: React.FC<InputProps> = ({ label, optional, children
           {...props}
         />
         {children}
-        {meta.touched && meta.error ? (
-          <div className="error">{meta.error}</div>
+        {(meta.touched && meta.error) || errors ? (
+          <div className="error">{meta.error || errors[props.name]}</div>
         ) : null}
       </InputTextFieldStyled>
     );
