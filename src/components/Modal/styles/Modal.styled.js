@@ -8,6 +8,7 @@ export const ModalStyled = styled.div`
     margin: auto;
     border-radius: 7px;
     border: 1px solid #b9b9b9;
+
     @media (max-width: 450px) {
         border: none;
     }
