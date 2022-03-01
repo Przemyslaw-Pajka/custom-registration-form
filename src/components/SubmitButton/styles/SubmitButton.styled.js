@@ -11,7 +11,6 @@ export const SubmitButtonStyled = styled.button`
     margin: 0 auto;
     
     &.submit-registration-btn {
-        max-width: 180px;
         margin-top: 29px;
         padding: 16px 70.5px;
     }

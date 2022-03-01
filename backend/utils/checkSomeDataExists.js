@@ -1,17 +1,15 @@
 const errorMessages = {
-    pesel: 'Pesel się powtarza',
-    payerNumber: 'Numer płatnika się powtarza',
-    email: 'Email jest już przypisany do innego konta'
+    email: 'Email exists',
+    phone: 'Phone number exists',
 }
 
 const checkSomeDataExistsInDB = (dataFromUser, dataDB) => {
     let errorMessagesObject = {}
     const isDataFromUserRepeating = dataDB.some((item) => {
-        const isPeselRepeating = dataFromUser.pesel === item.pesel;
-        const isPayerNumberRepeating = dataFromUser.payerNumber === item.payerNumber
+        const isPhoneRepeating = dataFromUser.phone === item.phone
         const isEmailRepeating = dataFromUser.email === item.email
 
-        if (isEmailRepeating || isPeselRepeating || isPayerNumberRepeating) {
+        if (isPhoneRepeating || isEmailRepeating) {
             return true
         }
         return false;

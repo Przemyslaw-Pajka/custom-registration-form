@@ -17,9 +17,9 @@ export const ModalUserRegistered:React.FC = (props) => {
     }
     
     return(
-        <ModalUserRegisteredStyled className="fixed">Dziękujemy! 
-            <br/>Proces rejestracji użytkownika został zakończony pomyślnie.
-            <SubmitButton onClick={(e)=>handleClick(e)}>Wróć</SubmitButton>
+        <ModalUserRegisteredStyled className="fixed">Thanks! 
+            <br/>We will contact you soon.
+            <SubmitButton onClick={(e)=>handleClick(e)}>Back to homepage</SubmitButton>
         </ModalUserRegisteredStyled> 
     )
 };

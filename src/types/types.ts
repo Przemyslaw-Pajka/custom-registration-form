@@ -13,20 +13,15 @@ export type InputProps = {
   export type SetState = React.Dispatch<React.SetStateAction<{}>>
 
   export interface DataFromUser {
+    date: any,
+    time: any,
     email: string,
-    password: string,
-    payerNumber: number | '',
-    pesel: number | '',
-    phone?: number | '',
+    phone: number | '',
 }
   export interface FormValues extends ObjectKeys{
+    date: any,
+    time: any,
     email: string,
-    password: string,
-    payerNumber: number | '',
-    pesel: number | '',
-    phone?: number | '',
-    isOneDigit: boolean,
-    isAmountChar: boolean,
-    isUppLowLetter: boolean,
+    phone: number | '',
 }
 

@@ -24,14 +24,10 @@ export const RegistrationForm:React.FC = React.memo((props) => {
   } = useContext(StoreContext)
 
   const initialValues:FormValues = {
-    email:'',
-    password: '',
-    payerNumber: '',
-    pesel: '',
+    date:'',
+    time: '',
+    email: '',
     phone: '',
-    isOneDigit: false,
-    isAmountChar: false,
-    isUppLowLetter: false,
   }
   return (
     <Formik
@@ -39,10 +35,9 @@ export const RegistrationForm:React.FC = React.memo((props) => {
       validationSchema={registrationValidationSchema}
       onSubmit={(values) => {
         const dataFromUser = {
+          date: values.date,
+          time: values.time,
           email: values.email,
-          password: values.password,
-          payerNumber: values.payerNumber,
-          pesel: values.pesel,
           phone: values.phone
         }
         sendForm (

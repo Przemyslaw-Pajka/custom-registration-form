@@ -12,7 +12,7 @@ export const Home = () => {
   return (
     <Modal>
       <HomeStyled id="homeBox">
-       <HomeHeading>Rejestracja</HomeHeading>
+       <HomeHeading>Registration</HomeHeading>
        <RegistrationForm />
        </HomeStyled>
        {isUserRegistrationConfirmed? <ModalUserRegistered/>: null}
