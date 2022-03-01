@@ -1,22 +1,30 @@
 import React from 'react';
-import { FormValues } from '../../../../types/types';
+import { FormValues, SetState } from '../../../../types/types';
 import { handleChangeCheckboxes } from '../../../../utils/handleChangeCheckboxes';
 import { showHidePassword } from '../../../../utils/showHidePassword';
 import { MIN_PASSWORD_LENGTH } from '../../../../validation/CONSTANTS';
 import { validatePesel } from '../../../../validation/validatePesel';
+import { CircleLoader } from '../../../CircleLoader/CircleLoader';
 import { SubmitButton } from '../../../SubmitButton/SubmitButton';
 import { CheckboxField } from '../CheckboxField/CheckboxField';
 import { CheckboxGroup } from '../CheckboxGroup/CheckboxGroup';
 import { InputTextField } from '../InputTextField/InputTextField';
 
-export const DefaultInputsForm:React.FC<{values:FormValues}> = React.memo((props) => (
+interface Errors {
+  key: string
+}
+
+export const DefaultInputsForm:React.FC<{values:FormValues,errors:Errors,setErrors:SetState,isLoading:boolean}> = React.memo((props) => {
+  return (
     <>
       <InputTextField
         id="emailInput"
         label="E-MAIL"
         name="email"
+        onKeyUp={()=>props.setErrors(()=> {})}
         type="email"
         as="input"
+        errors={props.errors}
         value={props.values.email}
         placeholder="Wpisz adres e-mail"
         required
@@ -29,7 +37,7 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = React.memo((props
         type="password"
         as="input"
         value={props.values.password}
-        onKeyUp={()=>handleChangeCheckboxes(props.values)}
+        onKeyUp={()=>{handleChangeCheckboxes(props.values); props.setErrors(()=> {});}}
         placeholder="Wpisz hasło"
         required
       >
@@ -71,6 +79,8 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = React.memo((props
         name="payerNumber"
         type="number"
         as="input"
+        onKeyUp={()=>props.setErrors(()=> {})}
+        errors={props.errors}
         value={props.values.payerNumber}
         placeholder="Wpisz numer płatnika"
         required
@@ -80,7 +90,9 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = React.memo((props
         label="NUMER PESEL"
         name="pesel"
         type="number"
-        validate={validatePesel}
+        errors={props.errors}
+        onKeyUp={()=>props.setErrors(()=> {})}
+         validate={validatePesel}
         as="input"
         value={props.values.pesel}
         placeholder="Wpisz PESEL"
@@ -90,6 +102,7 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = React.memo((props
         id="phoneInput"
         label="TELEFON"
         optional={'(opcjonalne)'}
+        onKeyUp={()=>props.setErrors(()=> {})}
         name="phone"
         type="tel"
         as="input"
@@ -107,8 +120,9 @@ export const DefaultInputsForm:React.FC<{values:FormValues}> = React.memo((props
           Oświadczam, że zapoznałem się z treścią niniejszego <span className='text-alt-color text-medium-bold'>Regulaminu</span> <span className='text-gray text-medium-bold'>(ZGODA OBOWIĄZKOWA)</span> akceptuję jego treść i zobowiązuje się do przestrzegania go.
         </label>
       </CheckboxField>
-      <SubmitButton className="submit-registration-btn">Dalej</SubmitButton>
+      <SubmitButton className="submit-registration-btn">{props.isLoading?   <CircleLoader/> : 'Dalej'}</SubmitButton>
       <a href="/" className='log-in text-alt-color text-medium-bold'>Logowanie</a>
     </>
   )
+}
 )
