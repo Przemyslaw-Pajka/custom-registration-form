@@ -46,7 +46,7 @@ export const DefaultInputsForm:React.FC<{values:FormValues,errors:Errors,setErro
       />
       <InputTextField
         id="phoneInput"
-        label="TELEFON"
+        label="PHONE"
         onKeyUp={()=>props.setErrors(()=> {})}
         name="phone"
         type="tel"
