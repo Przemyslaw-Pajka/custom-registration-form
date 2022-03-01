@@ -5,7 +5,10 @@ export const HomeStyled = styled.div`
    max-width:722px;
    box-sizing: border-box;
    padding: 58px 72px 58px;
-   
+
+   &.hidden {
+      display: none;
+   }
    @media (max-width:450px) {
       height: 100vh;
       padding: 58px 15px 58px;
