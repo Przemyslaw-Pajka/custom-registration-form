@@ -13,7 +13,7 @@ export const invalidFieldsMessages = {
 }
 
 interface IRegExp {
-    [key:string]: RegExp | string | any
+    [key:string]: RegExp
 }
 
 export const regExp:IRegExp = {
