@@ -3,13 +3,23 @@ import { FieldAttributes } from "formik"
 export type InputProps = {
     label?: string,
     optional?: string | null,
+    errors? : any
   } & FieldAttributes<{}>
 
-  interface IObjectKeys {
+  interface ObjectKeys {
     [key: string]: string | number | boolean | undefined;
   }
   
-export interface FormValues extends IObjectKeys{
+  export type SetState = React.Dispatch<React.SetStateAction<{}>>
+
+  export interface DataFromUser {
+    email: string,
+    password: string,
+    payerNumber: number | '',
+    pesel: number | '',
+    phone?: number | '',
+}
+  export interface FormValues extends ObjectKeys{
     email: string,
     password: string,
     payerNumber: number | '',
