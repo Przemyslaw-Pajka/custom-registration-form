@@ -13,15 +13,9 @@ export type InputProps = {
   export type SetState = React.Dispatch<React.SetStateAction<{}>>
 
   export interface DataFromUser {
-    date: any,
-    time: any,
+    date: string,
+    time: string,
     email: string,
     phone: number | '',
 }
-  export interface FormValues extends ObjectKeys{
-    date: any,
-    time: any,
-    email: string,
-    phone: number | '',
-}
-
+  export interface FormValues extends ObjectKeys,DataFromUser{}

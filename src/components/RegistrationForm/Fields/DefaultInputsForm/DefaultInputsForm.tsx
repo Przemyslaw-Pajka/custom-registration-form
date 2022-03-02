@@ -41,7 +41,7 @@ export const DefaultInputsForm:React.FC<{values:FormValues,errors:Errors,setErro
         as="input"
         errors={props.errors}
         value={props.values.email}
-        placeholder="Wpisz adres e-mail"
+        placeholder="Please enter e-mail"
         required
       />
       <InputTextField
