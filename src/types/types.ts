@@ -19,12 +19,7 @@ export type InputProps = {
     pesel: number | '',
     phone?: number | '',
 }
-  export interface FormValues extends ObjectKeys{
-    email: string,
-    password: string,
-    payerNumber: number | '',
-    pesel: number | '',
-    phone?: number | '',
+  export interface FormValues extends ObjectKeys, DataFromUser{
     isOneDigit: boolean,
     isAmountChar: boolean,
     isUppLowLetter: boolean,
