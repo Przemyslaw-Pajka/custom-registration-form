@@ -3,12 +3,13 @@ const app = express();
 const cors = require('cors')
 const fs = require('fs');
 const checkSomeDataExistsInDB = require('./utils/checkSomeDataExists');
+const hostname = '127.0.0.1'
 const port = 5000;
 const pathToDB = './db/data.json'
 
 app.use(cors())
 app.use(express.json());
-app.listen(port, () => {
+app.listen(port, hostname, () => {
     console.log(`Server listening on port ${port}!`);
 });
 
