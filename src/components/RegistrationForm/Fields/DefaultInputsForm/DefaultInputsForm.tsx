@@ -17,6 +17,7 @@ export const DefaultInputsForm:React.FC<{values:FormValues,errors:Errors,setErro
         onKeyUp={()=>props.setErrors(()=> {})}
         name="date"
         type="date"
+        min={new Date().toISOString().split('T')[0]}
         as="input"
         value={props.values.date}
         required
