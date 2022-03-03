@@ -17,5 +17,18 @@ export const ModalUserRegisteredStyled = styled(ModalStyled)`
             padding: 17px 35px;
             margin-top: 10px;
         }
+        @media screen and (max-width: 750px) {
+            width: 75vw;
+        }
+        @media screen and (max-width: 450px) {
+            padding: 25px;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+        }
     }
 `
