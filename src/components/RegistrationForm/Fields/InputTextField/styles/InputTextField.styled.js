@@ -22,6 +22,7 @@ export const InputTextFieldStyled = styled.div`
     padding-top: 16px;
   }
   input {
+    width: 100%;
     margin: 0;
     background: #f9f9f9;
     border: 1px solid #d3cfcf;
