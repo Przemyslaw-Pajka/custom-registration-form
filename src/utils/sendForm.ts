@@ -8,7 +8,6 @@ export const sendForm = (dataFromUser:DataFromUser, setIsLoading:SetState, setEr
     fetch(URL_TO_SEND_DATA, {
         method: 'POST',
         mode: 'cors',
-        credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
         },
