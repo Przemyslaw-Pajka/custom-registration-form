@@ -13,6 +13,10 @@ export const HomeStyled = styled.div`
       height: 100vh;
       padding: 58px 15px 58px;
       padding-top: 0;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
       .submit-registration-btn,.log-in {
          margin-top: 10px;
       }
