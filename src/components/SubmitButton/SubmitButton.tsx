@@ -3,7 +3,7 @@ import { SubmitButtonStyled } from "./styles/SubmitButton.styled"
 
 export const SubmitButton:React.FC<React.HTMLAttributes<HTMLDivElement>> = (props) => {
     return(
-    <SubmitButtonStyled className={props.className} onClick={props.onClick}>
+    <SubmitButtonStyled className={props.className} onClick={props.onClick} type="submit">
         {props.children}
     </SubmitButtonStyled>
 )}

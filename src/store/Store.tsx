@@ -16,7 +16,6 @@ export const StoreContextProvider: React.FC = (props) => {
         setIsLoading
     }
 
-    console.log(errors)
     return (  
         <StoreContext.Provider value={values}>
            {props.children}

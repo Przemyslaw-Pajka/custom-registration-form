@@ -4,7 +4,7 @@ import { URL_TO_SEND_DATA } from "./CONSTANTS";
 
 export const sendForm = (dataFromUser:DataFromUser, setIsLoading:SetState, setErrors:SetState, setIsUserRegistrationConfirmed:SetState) => {
     setIsLoading(true);
-
+    
     fetch(URL_TO_SEND_DATA, {
         method: 'POST',
         headers: {
